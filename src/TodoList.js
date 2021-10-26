@@ -4,6 +4,7 @@ export default function TodoList(props) {
     const[todos, setTodos] = useState([
         "Walk the cat",
         "Make the garden",
+        "Go to the toilet"
     ]);
 
     const getTodos = () => {
@@ -15,7 +16,9 @@ export default function TodoList(props) {
     }
 
     const deleteItem = (id) => {
-        setTodos(todos.splice(id - 1, 1));
+        let newTodos = [...todos];
+        newTodos.splice(id, 1);
+        setTodos(newTodos);
     }
 
 
